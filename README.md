@@ -9,6 +9,6 @@ with thanks to the [easy logger project](https://www.obdev.at/products/vusb/easy
 1. install [crosspack](https://www.obdev.at/products/crosspack/index.html)
 1. pop an [ATtiny85](http://www.atmel.com/devices/attiny85.aspx) into the [usbtiny](https://www.sparkfun.com/products/11801) programmer
 1. `cd` to this directory
-1. `make fuses`
+1. `make fuse`
     + enable correct fuse pattern for 3 or 4 i/o pins (see comments)
 1. `make flash`

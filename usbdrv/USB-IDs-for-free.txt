@@ -63,7 +63,7 @@ Table if IDs for discrimination by textual name:
 
 PID dec (hex) | VID dec (hex) | Description of use
 ==============+===============+============================================
-1500 (0x05dc) | 5824 (0x16c0) | For Vendor Class devices with libusb
+1500 (0x05dc) | 5824 (0x16c0) | For Vendor Class devices with  libusb
 --------------+---------------+--------------------------------------------
 1503 (0x05df) | 5824 (0x16c0) | For generic HID class devices (which are
               |               | NOT mice, keyboards or joysticks)

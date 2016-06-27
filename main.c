@@ -1,6 +1,6 @@
 /* Name: main.c
- * Project: 4-Key-Keyboard
- * Author: Flip van den Berg - www.flipwork.nl
+ * Project: abc-123-intExp
+ * Author: Ben Moren http://benmoren.com, Modified on an original file by Flip van den Berg - www.flipwork.nl
  * Creation Date: February 2010
  * Based on V-USB drivers from Objective Developments - http://www.obdev.at/products/vusb/index.html
  */
@@ -10,17 +10,16 @@
 
 IMPORTANT: 	This project uses fuse settings that disable the reset pin in order to use it as an IO pin.
 			This means that if you can only re-program the AVR afterwards using High Voltage Serial Programming (HVSP)
-
 			If you have a programmer that only supports ISP make sure to upload the firmware before setting the reset-disable fuse!
 
 Working fuse setting on ATTiny45/85:
 
-//to disable reset and enable i/o
+//to disable reset and enable 4 I/O
 EXTENDED: 0xFF
 HIGH:	 0x5F
 LOW:	 0xC1
 
-//for testing
+//for testing with 3 pins of I/O
 EXTENDED: 0xFF
 HIGH:	 0xdF
 LOW:	 0xC1
@@ -105,6 +104,9 @@ static uchar    buttonChanged_B4;
 
 static uchar	debounceTimeIsOver = 1;	/* for switch debouncing */
 
+static uchar  abc123 = 1; //start in 123 mode
+
+
 
 /* ------------------------------------------------------------------------- */
 
@@ -162,47 +164,58 @@ static void buildReport(void){
 
 	if(newReport == 0){
 		if (buttonChanged_B1 == 1){
-        	if (buttonState_B1 != 0){ // if button 1 is released
-				key = 0; //button released event
-			}
-			else { //if button 1 is pressed
-				key = 30; // key = '1'
+      if (buttonState_B1 != 0){ // if button 1 is released
+				// key = 0; //button released event
+        abc123 = 0;
+			}else { //if button 1 is pressed
+				// key = 30; // key = '1'
+        abc123 = 1;
 	    	}
 			buttonChanged_B1 = 0;
-			reportBuffer[2] = key;
+			// reportBuffer[2] = key;
 		}
 
 
 		if (buttonChanged_B2 == 1){
-        	if (buttonState_B2 != 0){ // if button 2 is pressed
+      if (buttonState_B2 != 0){ // if button 2 is pressed
 				key = 0; //button released event
-			}
-			else {
-				key = 31;  // key = '2'
+			}else {
+        if (abc123 == 1){
+				  key = 30; // key = '1'
+        }else{
+          key = 4; //key = 'a'
+        }
 			}
 			buttonChanged_B2 = 0;
-    		reportBuffer[3] = key;
-    	}
+    	reportBuffer[2] = key;
+    }
 		if(buttonChanged_B3 == 1){
-        	if (buttonState_B3 != 0){ // if button 3 is pressed
+      if (buttonState_B3 != 0){ // if button 3 is pressed
 				key = 0; //button released event
-			}
-			else {
-				key = 32; // key = '3'
+			}else{
+        if (abc123 == 1){
+  				key = 31; // key = '2'
+        }else{
+          key = 5; //key = 'b'
+        }
 			}
 			buttonChanged_B3 = 0;
-			reportBuffer[4] = key;
-	    }
+			reportBuffer[3] = key;
+	  }
+
 		if(buttonChanged_B4 == 1){
-        	if (buttonState_B4 != 0){ // if button 4 is pressed
+      if (buttonState_B4 != 0){ // if button 4 is pressed
 				key = 0; //button released event
-			}
-			else {
-				key = 33;  // key = '4'
-    		}
-			buttonChanged_B4 = 0;
-    		reportBuffer[5] = key;
+			}else{
+        if(abc123 == 1){
+          key = 32;  // key = '3'
+        }else{
+          key = 6; //key = 'c'
+        }
     	}
+			buttonChanged_B4 = 0;
+    	reportBuffer[4] = key;
+    }
 
 		newReport = 1;; //if no button has changed, the previous report will be sent
 	}

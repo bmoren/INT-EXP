@@ -57,8 +57,10 @@ flash:	all
 #        | +------------------ CKOUT (clock output on CKOUT pin -> disabled)
 #        +-------------------- CKDIV8 (divide clock by 8 -> don't divide)
 fuse:
-	$(AVRDUDE) -U lfuse:w:0xc1:m -U hfuse:w:0xdf:m 
-	# $(AVRDUDE) -U lfuse:w:0xc1:m -U hfuse:w:0x5f:m
+	# for testing with 3 pins of I/O
+	$(AVRDUDE) -U lfuse:w:0xc1:m -U hfuse:w:0xdf:m -U efuse:w:0xff:m
+	# to disable reset and enable 4 I/O
+	# $(AVRDUDE) -U lfuse:w:0xc1:m -U hfuse:w:0x5f:m -U efuse:w:0xff:m
 
 readcal:
 	$(AVRDUDE) -U calibration:r:/dev/stdout:i | head -1
