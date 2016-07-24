@@ -9,9 +9,8 @@ with thanks to the [easy logger project](https://www.obdev.at/products/vusb/easy
 1. install [crosspack](https://www.obdev.at/products/crosspack/index.html)
 1. pop an [ATtiny85](http://www.atmel.com/devices/attiny85.aspx) into the [usbtiny](https://www.sparkfun.com/products/11801) programmer
 1. `cd` to this directory
-1. make the fuses, choose one of the following:
-    + `make fuse`
-      + uses the temporary 3 pin i/o for testing
-    + `make resetfuse`
-      + uses the final 4 pin i/o for final deployment. NOTE: this will disable the ATtiny from being re-programmable without a high voltage programmer
-1. `make flash`
+1. `make fuse` Make the temporary 3 pin fuses with i/o on pin 4 for testing, (For the final fuse config, see below.)
+1. `make flash` Flash the main.c file to the board.
+1. `make resetfuse`
+  + uses the final 4 pin i/o for final deployment. NOTE: this will disable the ATtiny from being re-programmable without a high voltage programmer. This must be completed after `make flash` or you will not be able to program the board!
+1. `make clean` Delete all of the files used to build the main.hex file for programming.
