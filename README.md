@@ -1,4 +1,6 @@
-# abc-123
+# INT EXP
+<img src="/PCB/pcb_rendering.png" width="200">
+
 screen &amp; physical interaction experimentation board
 
 based on [v-usb](https://www.obdev.at/products/vusb/index.html) and the [ATtiny85](http://www.atmel.com/devices/attiny85.aspx)
