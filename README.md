@@ -5,6 +5,8 @@ based on [v-usb](https://www.obdev.at/products/vusb/index.html) and the [ATtiny8
 
 with thanks to the [easy logger project](https://www.obdev.at/products/vusb/easylogger.html) and the [4 key keyboard project](http://blog.flipwork.nl/?x=entry:entry100224-003937)
 
+[Build of Materials](https://docs.google.com/spreadsheets/d/1fC4rKzH0t7pgVtuNgmvmoYLOOsRQa8CITz7sNQLkrys/edit#gid=0)
+
 ### to compile and upload:
 1. install [crosspack](https://www.obdev.at/products/crosspack/index.html)
 1. pop an [ATtiny85](http://www.atmel.com/devices/attiny85.aspx) into the [usbtiny](https://www.sparkfun.com/products/11801) programmer

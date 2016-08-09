@@ -59,7 +59,7 @@ flash:	all
 fuse:
 	# for testing with 3 pins of I/O
 	$(AVRDUDE) -U lfuse:w:0xc1:m -U hfuse:w:0xdf:m -U efuse:w:0xff:m
-	
+
 resetfuse:
 	# to disable reset and enable 4 I/O
 	$(AVRDUDE) -U lfuse:w:0xc1:m -U hfuse:w:0x5f:m -U efuse:w:0xff:m
