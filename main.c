@@ -194,9 +194,9 @@ static void buildReport(void){
 				key = 0; //button released event
 			}else{
         if (abc123 == 1){
-  				key = 31; // key = '2'
+  				key = 32; // key = '3'
         }else{
-          key = 5; //key = 'b'
+          key = 6; //key = 'c'
         }
 			}
 			buttonChanged_B3 = 0;
@@ -208,9 +208,9 @@ static void buildReport(void){
 				key = 0; //button released event
 			}else{
         if(abc123 == 1){
-          key = 32;  // key = '3'
+          key = 31;  // key = '2'
         }else{
-          key = 6; //key = 'c'
+          key = 5; //key = 'b'
         }
     	}
 			buttonChanged_B4 = 0;
