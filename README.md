@@ -1,5 +1,5 @@
 # INT EXP
-<img src="/PCB/pcb_rendering.png" width="200"><img src="assembled.png" width="200">
+<img src="/PCB/v0.2/render.png" height="300"><img src="assembled.png" height="300">
 
 screen &amp; physical interaction experimentation board
 
