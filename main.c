@@ -1,6 +1,7 @@
 /* Name: main.c
  * Project: abc-123-intExp
- * Author: Ben Moren http://benmoren.com, Modified on an original file by Flip van den Berg - www.flipwork.nl
+ * Author: Ben Moren http://benmoren.com,
+ * Thanks to Flip van den Berg - www.flipwork.nl - for a similar project which served as reference and a starting point for this project.
  * Creation Date: February 2010
  * Based on V-USB drivers from Objective Developments - http://www.obdev.at/products/vusb/index.html
  */
